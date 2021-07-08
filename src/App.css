@@ -65,6 +65,14 @@ text-decoration-thickness:1.5px ;
   color: red;
   font-weight: 500;
 }
+.Userlist h6 input{
+  font-size: 1.1rem;
+  font-weight: 600;
+  width: 21%;
+  text-transform: capitalize;
+  border: none;
+  background: transparent;
+}
 .Userlist .active-col{
   background: blueviolet;
   color: white !important;

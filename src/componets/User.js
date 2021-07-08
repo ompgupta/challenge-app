@@ -2,15 +2,17 @@ import React, { useEffect, useState } from 'react';
 import Userlist from './Userlist';
 
 const User = () => {
+   
     const [users, setUsers] = useState([]);
     const [username, setUsername]= useState([]);
     const [img, setImg]= useState([]);
     const [number,setNumber] = useState([]);
-    const[add, setAdd]=useState([]);
+    const [add, setAdd]=useState([]);
     const [country, setCountry] =useState([]);
     const [code, setCode]=useState([]);
     const [desc, setDesc] = useState([]);
     const [gender, setGender] = useState([]);
+    const [mail, setMail]=useState([]);
     const getUsers = async () => {
         const response = await fetch('https://randomuser.me/api/?inc=gender,name,nat,location,picture,email&results=20');
         // setUsers(await response.json());
@@ -25,6 +27,7 @@ const User = () => {
       setCode(`${data.results[0].location.postcode}\n ${data.results[0].location.timezone.offset}, `);
       setDesc(data.results[0].location.timezone.description);
       setGender(data.results[0].gender);
+      setMail(data.results[0].email);
     }
     useEffect(() => {
         getUsers();
@@ -37,7 +40,7 @@ const User = () => {
                     <div className="col-md-2 pl-4">
                         <img src={img} alt="" />
                     </div> 
-                     <div className="col-md-10 text-left mt-4 pl-5" onLoad = {()=>getUsers()}>
+                     <div className="col-md-10 text-left mt-4 pl-5">
                         <h2>{username}</h2>
                         <p><span style={{ color: 'blueviolet' }}>{number},</span>{add}<span className='text-dark font-weight-bold'>{country},</span>
                        <br />  {code} <span style={{ textDecoration: 'underline' }}>{desc}</span> <br /><span className='text-muted text-capitalize'>{gender}</span></p>
@@ -45,7 +48,7 @@ const User = () => {
                     </div>
                 </div>
                 
-                <Userlist user={users}/>
+                <Userlist user={users} name={username} gender={gender} email={mail}/>
         </>
     )
 }
