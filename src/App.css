@@ -1,12 +1,83 @@
 .App {
   text-align: center;
+  background-color: rgb(235, 235, 235);
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
+/* ----------header---------------- */
+.nav-link{
+  font-weight: 600 !important;
+  color: rgb(0, 0, 0) !important;
+}
+.act{
+  text-decoration:underline!important;
+  text-decoration-color: rgb(255, 77, 77) !important;
+  text-decoration-thickness: 2px !important;
+}
+.nav-link:hover{
+ text-decoration:underline!important;
+ text-decoration-color: rgb(255, 77, 77) !important;
+ text-decoration-thickness: 2px !important;
+ transition: 0.5s !important;
+}
+/* *************User******************* */
+.user{
+  width: 50% !important;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(143, 143, 143, 0.637);
+  border-radius: 10px;
+}
+.user img{
+  border-radius: 50%;
+  width: 100%;
+  margin: 2.5rem 0 2.5rem 1rem;  
+}
+.user h2{
+color: rgb(255, 77, 77);
+text-decoration: underline;
+text-decoration-thickness:1.5px ;
+}
+.user p{
+  font-weight: 500;
+  color: rgb(82, 82, 82);
+}
+/* *************Userlist******************* */
+.Userlist{
+  padding-bottom: 5rem;
+}
+.Userlist .row{
+  /* margin-left: 10rem; */
+  display: flex;
+  flex-direction: wrap;
+}
+.Userlist .column{
+  text-align: left;
+  background: white;
+  box-shadow: 0 0 5px rgba(143, 143, 143, 0.637);
+  border-radius: 5px;
+  min-width:30%;
+  height: auto;
+}
+.Userlist #email{
+  color: red;
+  font-weight: 500;
+}
+.Userlist .active-col{
+  background: blueviolet;
+  color: white !important;
+}
+.Userlist .column:hover{
+  background: blueviolet;
+  color: white !important;
+  transition: 0.3s;
+  transform: translateY(-10px);
+}
+.Userlist .column:hover #email{
+  color: white;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -36,3 +107,54 @@
     transform: rotate(360deg);
   }
 }
+
+/* ------------------media querry--------------- */
+/* ---------mobile device-------------------- */
+@media screen and (max-width:480px) {
+  
+  .App {
+   font-size: 1rem;
+  }
+  /* *************User******************* */
+  .user{
+    width: 90% !important;
+  }
+  .user img{
+    width: 50%;  
+  }
+  .user .col-md-10{
+    margin-top: 0 !important;
+    text-align: center !important;
+    padding-left: 0 !important;
+  }
+  /* *************Userlist******************* */
+
+  .Userlist .column{
+    min-width:90%;
+  }
+}
+
+/* -----------------for tablet----------------- */
+@media (min-width:482px) and (max-width:768px) {
+.App {
+  font-size: 1rem;
+ }
+ /* *************User******************* */
+ .user{
+   width: 90% !important;
+ }
+ /* *************Userlist******************* */
+ .Userlist .column{
+   min-width:45%;
+ }
+}
+/* ************for ipadpro***************** */
+@media (min-width:770px) and (max-width:1024px) {
+  .App {
+    font-size: 1rem;
+   }
+   /* *************User******************* */
+   .user{
+     width: 70% !important;
+   }
+  }
