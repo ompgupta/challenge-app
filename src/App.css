@@ -73,8 +73,11 @@ text-decoration-thickness:1.5px ;
   border: none;
   background: transparent;
 }
-.Userlist .active-col{
+.Userlist .column:first-child{
   background: blueviolet;
+  color: white;
+}
+.Userlist .column:first-child #email{
   color: white !important;
 }
 .Userlist .column:hover{

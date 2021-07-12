@@ -14,11 +14,12 @@ const User = () => {
     const [gender, setGender] = useState([]);
     const [mail, setMail]=useState([]);
     const getUsers = async () => {
-        const response = await fetch('https://randomuser.me/api/?inc=gender,name,nat,location,picture,email&results=20');
+        const response = await fetch('https://randomuser.me/api/?inc=gender,name,nat,location,picture,email&results=21');
         // setUsers(await response.json());
        
         const data = await response.json();
       setUsers(data.results);
+      console.log(data.results[0].email);
       setUsername(`${data.results[0].name.title} ${data.results[0].name.first} ${data.results[0].name.last}`);
       setImg(data.results[0].picture.medium);
       setNumber(data.results[0].location.street.number);
